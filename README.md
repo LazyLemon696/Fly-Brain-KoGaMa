@@ -38,6 +38,3 @@ dotnet build -c Release -p:ServerRoot="C:\(\your\directory\to\openkogama-\)serve
 * **Nightus** - Creator of OpenKoGaMa and the deadzone plugin.
 * **FlyWire** - Creators of the fly's brain dataset and recompilation.
 * Based on the [Fly-Brain AI Emulation Project](https://github.com/eonsystemspbc/fly-brain).
-
-## License
-[Specify your license here, e.g., MIT or GPL]
