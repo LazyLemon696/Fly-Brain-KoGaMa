@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Root of your openkogama-server checkout: the folder that contains api\ and examples\.
+         The default fits this project sitting in examples\flybrain. Anywhere else, pass it on the command line:
+         dotnet build -c Release -p:ServerRoot="C:\path\to\openkogama-server-main" -->
+    <ServerRoot Condition="'$(ServerRoot)' == ''">..\..</ServerRoot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(ServerRoot)\api\openkogama-api.csproj" Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="fly-skin.kgavatar" LogicalName="fly-skin.kgavatar" Condition="Exists('fly-skin.kgavatar')" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>flybrain</AssemblyName>
+    <RootNamespace>FlyBrain</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <Target Name="CopyToServer" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ServerRoot)\bin\$(Configuration)\net10.0\plugins" />
+  </Target>
+
+</Project>
