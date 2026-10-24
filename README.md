@@ -14,8 +14,6 @@ An OpenKoGaMa server plugin that introduces an NPC fly driven by an emulation be
 * **OpenKoGaMa Server** installed on your machine.
 * **.NET SDK** (matching your OpenKoGaMa server version, typically .NET 7.0 or 8.0 i have usied .NET 10.0)
 
-).
-
 ## Build Guide
 
 1. Clone or download this repository to your local machine.
@@ -23,7 +21,7 @@ An OpenKoGaMa server plugin that introduces an NPC fly driven by an emulation be
 3. Run the following command to build the project (replace the path with your actual OpenKoGaMa server directory):
 
 ```bash
-dotnet build -c Release -p:ServerRoot="C:\(\your\directory\to\openkogama-\)server"
+dotnet build -c Release -p:ServerRoot="C:\(\your\directory\to\openkogama-server)"
 ```
 
 ## Installation & Usage
